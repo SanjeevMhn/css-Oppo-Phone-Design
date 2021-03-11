@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*,
+::before,
+::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}   
+:root{
+    --total-height: 560px;
+    --total-width: 310px;
+    --main-color: rgb(245, 245, 245);
+    --option-color: rgb(66, 66, 66);
+}
+.container-phone{
+    height: var(--total-height); 
+    width: var(--total-width);
+    position: relative;
+    background-color: var(--main-color);
+    border-radius: 35px;
+    border: 2px solid #000;
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+.container-phone .camera-flash,
+.container-phone .wrapper,
+.container .options{
+    position: relative;
+}
+
+.container-phone .camera-flash{
+    height: 10%;
+    width: 100%;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+}
+    .camera-flash .main-camera{
+        height: 100%;
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .camera-flash .main-camera::after{
+        content: "";
+        height: 0.8rem;
+        width: 0.8rem;
+        border-radius: 50%;
+        background: #000;
+    }
+    .camera-flash .sound-bar{
+        height: 100%;
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .camera-flash .sound-bar::after{
+        content: "";
+        height: 0.3rem;
+        width: 100%;
+        background-color: #000;
+        border-radius: 20px;  
+    }
+    .camera-flash .flash{
+        height: 100%;
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .camera-flash .flash::after{
+        content: "";
+        height: 0.75rem;
+        width: 0.75rem;
+        border-radius: 50%;
+        background: #000;
+    }
+
+.container-phone .wrapper{
+    height: 80%;
+    width: 95%;
+    background: url("https://images.unsplash.com/photo-1615372021685-b2dc6f9c2819?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;;
+}
+    .wrapper .header-wrapper{
+        height: 5%;
+        width: 98%;
+    }
+        .header-wrapper .main-header{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            position: relative;
+        }
+            .main-header .network-info{
+                height: 100%;
+                width: 25%;
+                display: flex;
+            }
+                .network-info .signal-strength{
+                    height: 100%;
+                    width: 30%;
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: center;
+                    position: relative;
+                }
+                    .signal-strength span{
+                        width: 0.15rem;
+                        background-color: #fff;
+                        
+                        border-radius: 3px;
+                        margin-top: 0.43rem;
+                    }
+                    .signal-strength span:not(:last-child){
+                        margin-right: 0.1rem;
+                    }
+                    .signal-strength span:first-child{
+                        height:15%; 
+                    }
+                    .signal-strength span:nth-child(2){
+                        height:25%; 
+                    }
+                    .signal-strength span:nth-child(3){
+                        height:40%; 
+                    }
+                    .signal-strength span:last-child{
+                        height:50%; 
+                    }
+                .network-info .signal-name{
+                    height: 100%;
+                    width: 70%;
+                    display: flex;
+                    align-items: baseline;
+                    font-weight: bolder;
+                    visibility: hidden;
+                }
+            .main-header .header-time{
+                height: 100%;
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: baseline;            
+                font-weight: bold;
+                visibility: hidden;
+            }
+            .main-header .battery-details{
+                height: 100%;
+                width: 25%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+                .battery-details .battery-percentage{
+                    height: 100%;
+                    width: 50%;
+                    font-weight: 800;
+                    display: flex;
+                    font-size: 0.85rem;
+                    justify-content: center;
+                    align-items: center;
+                    visibility: hidden;
+                }
+                .battery-details .battery-design{
+                    margin-top: 0.43rem;
+                    height: 100%;
+                    width: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    position: relative;
+                }
+                    .battery-design .outer{
+                        height: 60%;
+                        width: 85%;
+                        padding: 1.15px;
+                        border-radius: 2px;
+                        border: 1px solid #fff;
+                        display: flex;
+                        position: relative;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .battery-design .outer::after{
+                        content: "";
+                        height: 35%;
+                        width: 0.08rem;
+                        background-color: #fff;
+                        position: absolute;
+                        right: -0.15rem;
+                    }
+                    .battery-design .outer .inner{
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 1px;
+                        background-color: rgb(32, 111, 185);
+                    }
+
+    .wrapper .mid-wrapper{
+        height: 85%;
+        width: 90%;
+        position: relative;
+    }
+        .mid-wrapper .time-date-info{
+            height: 25%;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+            .time-date-info .big-time{
+                height: 65%;
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 4.2rem;
+            }
+            .time-date-info .date-day{
+                height: 25%;
+                width: 50%;
+                display: flex;
+                align-items: center;
+                font-size: 0.9rem;
+            }
+            .time-date-info .weather-temp{
+                height: 10%;
+                width: 50%;
+                display: flex;
+                align-items: center;
+                font-size: 0.85rem;
+            }
+        .mid-wrapper .arrow-up-unlock{
+            height: 7%;
+            width: 100%;
+            margin-top: 13rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+            .arrow-up-unlock span{
+                height: 1.25rem;
+                width: 1.25rem;
+                transition: all 500ms ease-in;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                cursor: pointer;
+            }
+            .arrow-up-unlock span::before{
+                content: "";
+                --border-color: rgb(255, 255, 255);
+                top: 0.3rem;
+                height: 100%;
+                position: absolute;
+                width: 100%;
+                border-top: 3px solid var(--border-color);
+                border-left: 3px solid var(--border-color);
+                border-right-width: 0;
+                transform: rotate(45deg);
+                justify-self: flex-start;
+                opacity: .5;
+            }
+            .arrow-up-unlock span:hover{
+                transform: translateY(-10px);
+            }
+          
+    .wrapper footer{
+        height: 15%;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+        footer .pin-picture{
+            height: 100%;
+            width: 20%;
+        }
+        footer .access-camera{
+            height: 100%;
+            width: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+        }
+            .access-camera span{
+                height: 1.25rem;
+                width: 1.8rem;
+                border-radius: 2px;
+                background-color: rgb(99, 99, 99);
+                opacity: .5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                cursor: pointer;
+            }
+            .access-camera span::before{
+                content: "";
+                position: absolute;
+                height: 50%;
+                width: 50%;
+                background-color: rgb(99, 99, 99);
+                top: -0.25rem;
+                border-radius: 2px;
+            }
+            .access-camera span::after{
+                content: "";
+                position: absolute;
+                height: 0.75rem;
+                width: 0.75rem;
+                border: 2px solid #fff;
+                border-radius: 50%;
+            }
+.container-phone .options{
+    height: 10%;
+    width: 100%;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+}
+    .options .background-apps{
+        height: 100%;
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .options .background-apps::after{
+        content: "";
+        height: 0.75rem;
+        width: 0.75rem;
+        border: 1px solid var(--option-color);
+        border-radius: 3px;
+    }
+    .options .home{
+        height: 100%;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .options .home::after{
+        content: "";
+        height: 0.75rem;
+        width: 0.95rem;
+        border: 1.5px solid var(--option-color);
+        border-radius: 5px;
+    }
+    .options .previous{
+        height: 100%;
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .options .previous::after{
+        content: "";
+        height: 0.8rem;
+        width: 0.8rem;
+        transform: rotate(180deg);
+        border-top: 0.45rem solid transparent;
+        border-bottom: 0.45rem solid transparent;
+        border-left: 0.75rem solid var(--option-color); 
+    }
