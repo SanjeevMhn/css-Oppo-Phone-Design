@@ -9,7 +9,7 @@
 :root{
     --total-height: 560px;
     --total-width: 310px;
-    --main-color: rgb(245, 245, 245);
+    --main-color: rgb(231, 231, 231);
     --option-color: rgb(66, 66, 66);
 }
 .container-phone{
@@ -38,6 +38,7 @@
     background-color: inherit;
     display: flex;
     justify-content: center;
+    z-index: 10000;
 }
     .camera-flash .main-camera{
         height: 100%;
@@ -82,131 +83,156 @@
         background: #000;
     }
 
-.container-phone .wrapper{
+.const-img{
     height: 80%;
     width: 95%;
+    z-index: 10px;
+    position: absolute;
+    margin-top: 3.5rem;
+    overflow: hidden;
+    border: 1px solid black;
+}
+.const-img .background-img{
+    height: 100%;
+    width: 100%;
     background: url("https://images.unsplash.com/photo-1615372021685-b2dc6f9c2819?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
     background-repeat: no-repeat;
     background-size: cover;
+    transform: scale(1.1);    
+    transition: all 500ms ease-in-out;
+}
+.container-phone .wrapper{
+    height: 80%;
+    width: 95%;
+    background: transparent;
     color: #fff;
     display: flex;
+    /* display: none; */
     flex-direction: column;
     align-items: center;
-    font-family: 'Poppins', sans-serif;;
+    font-family: 'Poppins', sans-serif;
+    transition: all 700ms ease-in-out;
+    z-index: 2;
 }
-    .wrapper .header-wrapper{
-        height: 5%;
-        width: 98%;
+.container-phone .header-wrapper{
+        height: 4%;
+        width: 92%;
+        z-index: 9;
+        position: absolute;
+        z-index: 600;
+        top: 3.5rem;
+        font-family: 'Poppins', sans-serif;
+        
     }
-        .header-wrapper .main-header{
+    .header-wrapper .main-header{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        position: relative;
+    }
+        .main-header .network-info{
             height: 100%;
-            width: 100%;
+            width: 25%;
             display: flex;
-            position: relative;
         }
-            .main-header .network-info{
+            .network-info .signal-strength{
                 height: 100%;
-                width: 25%;
+                width: 30%;
                 display: flex;
+                align-items: baseline;
+                justify-content: center;
+                position: relative;
             }
-                .network-info .signal-strength{
-                    height: 100%;
-                    width: 30%;
-                    display: flex;
-                    align-items: baseline;
-                    justify-content: center;
-                    position: relative;
+                .signal-strength span{
+                    width: 0.145rem;
+                    background-color: #fff;
+                    border-radius: 3px;
+                    margin-top: 0.5rem;
                 }
-                    .signal-strength span{
-                        width: 0.15rem;
-                        background-color: #fff;
-                        
-                        border-radius: 3px;
-                        margin-top: 0.43rem;
-                    }
-                    .signal-strength span:not(:last-child){
-                        margin-right: 0.1rem;
-                    }
-                    .signal-strength span:first-child{
-                        height:15%; 
-                    }
-                    .signal-strength span:nth-child(2){
-                        height:25%; 
-                    }
-                    .signal-strength span:nth-child(3){
-                        height:40%; 
-                    }
-                    .signal-strength span:last-child{
-                        height:50%; 
-                    }
-                .network-info .signal-name{
-                    height: 100%;
-                    width: 70%;
-                    display: flex;
-                    align-items: baseline;
-                    font-weight: bolder;
-                    visibility: hidden;
+                .signal-strength span:not(:last-child){
+                    margin-right: 0.15rem;
                 }
-            .main-header .header-time{
+                .signal-strength span:first-child{
+                    height:15%; 
+                }
+                .signal-strength span:nth-child(2){
+                    height:30%; 
+                }
+                .signal-strength span:nth-child(3){
+                    height:40%; 
+                }
+                .signal-strength span:last-child{
+                    height:60%; 
+                }
+            .network-info .signal-name{
+                height: 100%;
+                width: 70%;
+                display: flex;
+                align-items: baseline;
+                font-weight: bolder;
+                visibility: hidden;
+            }
+        .main-header .header-time{
+            height: 100%;
+            width: 50%;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+            visibility: hidden;
+            margin-top: 0.3rem;
+        }
+        .main-header .battery-details{
+            height: 100%;
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .battery-details .battery-percentage{
+                height: 100%;
+                width: 50%;
+                font-weight: 800;
+                display: flex;
+                font-size: 0.85rem;
+                justify-content: center;
+                align-items: center;
+                visibility: hidden;
+            }
+            .battery-details .battery-design{
+                margin-top: 0.43rem;
                 height: 100%;
                 width: 50%;
                 display: flex;
-                justify-content: center;
-                align-items: baseline;            
-                font-weight: bold;
-                visibility: hidden;
-            }
-            .main-header .battery-details{
-                height: 100%;
-                width: 25%;
-                display: flex;
-                justify-content: center;
                 align-items: center;
+                justify-content: flex-start;
+                position: relative;
             }
-                .battery-details .battery-percentage{
-                    height: 100%;
-                    width: 50%;
-                    font-weight: 800;
+                .battery-design .outer{
+                    height: 60%;
+                    width: 85%;
+                    padding: 1.15px;
+                    border-radius: 2px;
+                    border: 1px solid #fff;
                     display: flex;
-                    font-size: 0.85rem;
-                    justify-content: center;
-                    align-items: center;
-                    visibility: hidden;
-                }
-                .battery-details .battery-design{
-                    margin-top: 0.43rem;
-                    height: 100%;
-                    width: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
                     position: relative;
+                    align-items: center;
+                    justify-content: center;
                 }
-                    .battery-design .outer{
-                        height: 60%;
-                        width: 85%;
-                        padding: 1.15px;
-                        border-radius: 2px;
-                        border: 1px solid #fff;
-                        display: flex;
-                        position: relative;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    .battery-design .outer::after{
-                        content: "";
-                        height: 35%;
-                        width: 0.08rem;
-                        background-color: #fff;
-                        position: absolute;
-                        right: -0.15rem;
-                    }
-                    .battery-design .outer .inner{
-                        height: 100%;
-                        width: 100%;
-                        border-radius: 1px;
-                        background-color: rgb(32, 111, 185);
-                    }
+                .battery-design .outer::after{
+                    content: "";
+                    height: 35%;
+                    width: 0.08rem;
+                    background-color: #fff;
+                    position: absolute;
+                    right: -0.15rem;
+                }
+                .battery-design .outer .inner{
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 1px;
+                    background-color: rgb(32, 111, 185);
+                }
 
     .wrapper .mid-wrapper{
         height: 85%;
@@ -216,7 +242,7 @@
         .mid-wrapper .time-date-info{
             height: 25%;
             width: 100%;
-            margin-top: 1.5rem;
+            margin-top: 3.5rem;
         }
             .time-date-info .big-time{
                 height: 65%;
@@ -320,18 +346,153 @@
             .access-camera span::after{
                 content: "";
                 position: absolute;
-                height: 0.75rem;
-                width: 0.75rem;
+                height: 0.65rem;
+                width: 0.65rem;
                 border: 2px solid #fff;
                 border-radius: 50%;
             }
+.container-phone .wrapper-keycode-view{
+    height: 80%;
+    width: 95%;
+    background: transparent;
+    color: #fff;
+    display: flex;
+    top: 31rem;
+    /* top: 3rem; */
+    z-index: 1;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    transition: all 700ms ease-in-out;
+    /* bottom: -80%; */
+}
+    .wrapper-keycode-view .inner-wrapper{
+        height: 78.5%;
+        width: 70%; 
+        margin-top: 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+        .inner-wrapper .passcode-display{
+            height: 25%;
+            width: 100%;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+            .passcode-display .top-text{
+                height: 50%;
+                width: 100%;
+                font-size: 0.85rem;
+                vertical-align: middle;
+                font-weight: bolder;
+                text-align: center;
+            }
+            .passcode-display .lines-circles{
+                height: 50%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+                .lines-circles span{
+                    height: 100%;
+                    width: 15%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                }
+                .lines-circles span::after{
+                    content: "";
+                    height: 0.5rem;
+                    width: 0.5rem;
+                    background-color: #fff;
+                    position: absolute;
+                    border-radius: 50%;
+                }
+        .inner-wrapper .passcode-input{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            display: relative;
+        }
+            .passcode-input .col-one,
+            .passcode-input .col-three,
+            .passcode-input .col-two{
+                height: 80%;
+                width: 33.33%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .passcode-input .col-one,
+            .passcode-input .col-three{
+                height: 80%;
+            }
+            .passcode-input .col-two{
+                height: 100%;
+            }
+                .col-one .input-num:not(:last-child),
+                .col-three .input-num:not(:last-child){
+                    margin-bottom: 0.45rem;
+                }
+                .col-two .input-num:not(:last-child){
+                    margin-bottom: 0.45rem;
+                }
+            .passcode-input .input-num{
+                height: 3.5rem;
+                width: 3.5rem;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                font-size: 1.75rem;
+                cursor: pointer;
+                transition: all 300ms ease;
+            }
+            .passcode-input .input-num:hover{
+                background-color: rgba(119, 119, 119, 0.384);
+            }
+        .inner-wrapper .other-info{
+            width: 100%;
+            height: 15%;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+            .other-info .emergency-call,
+            .other-info .back
+            {
+                height: 100%;
+                width: 20%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.8rem;
+                color: #fff;
+                cursor: pointer;
+            }
+
 .container-phone .options{
     height: 10%;
     width: 100%;
     background-color: inherit;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
+    .options .background-apps,
+    .options .home,
+    .options .previous{
+        cursor: pointer;
+    }
     .options .background-apps{
         height: 100%;
         width: 20%;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Oppo CPH1801</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,29 +14,32 @@
             <div class="sound-bar"></div>
             <div class="flash"></div>
         </header>
+        <div class="const-img">
+            <div class="background-img"></div>
+        </div>
+        <div class="header-wrapper">
+            <header class="main-header">
+                <div class="network-info">
+                    <div class="signal-strength">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="signal-name">NCeLL</span>
+                </div>
+                <div class="header-time">3:45 PM</div>
+                <div class="battery-details">
+                    <div class="battery-percentage">69%</div>
+                    <div class="battery-design">
+                        <div class="outer">
+                            <div class="inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
         <div class="wrapper">
-            <div class="header-wrapper">
-                <header class="main-header">
-                    <div class="network-info">
-                        <div class="signal-strength">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <span class="signal-name">NCeLL</span>
-                    </div>
-                    <div class="header-time">3:45 PM</div>
-                    <div class="battery-details">
-                        <div class="battery-percentage">69%</div>
-                        <div class="battery-design">
-                            <div class="outer">
-                                <div class="inner"></div>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-            </div>
             <div class="mid-wrapper">
                 <div class="time-date-info">
                     <div class="big-time">11:46</div>
@@ -45,7 +48,7 @@
                     <div class="charging-info"></div>  
                 </div>
                 <div class="arrow-up-unlock">
-                    <span></span>
+                    <span  class="arrow-up"></span>
                 </div>
             </div>
                 <footer>
@@ -55,6 +58,41 @@
                     </div>            
                 </footer>
         </div>
+        <div class="wrapper-keycode-view">
+            <div class="inner-wrapper">
+                <div class="passcode-display">
+                    <div class="top-text">Please enter passcode</div>
+                    <div class="lines-circles">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="passcode-input">
+                    <div class="col-one">
+                        <div class="input-num">1</div>
+                        <div class="input-num">4</div>
+                        <div class="input-num">7</div>
+                    </div>
+                    <div class="col-two">
+                        <div class="input-num">2</div>
+                        <div class="input-num">5</div>
+                        <div class="input-num">8</div>
+                        <div class="input-num">0</div>
+                    </div>
+                    <div class="col-three">
+                        <div class="input-num">3</div>
+                        <div class="input-num">6</div>
+                        <div class="input-num">9</div>
+                    </div>
+                </div>
+                <footer class="other-info">
+                    <div class="emergency-call"></div>
+                    <div class="back">Back</div>
+                </footer>
+            </div>            
+        </div>
         <footer class="options">
             <div class="background-apps"></div>
             <div class="home"></div>
@@ -62,5 +100,6 @@
         </footer>
     </div>
     <!-- <script src="https://unpkg.com/vue@next"></script> -->
+    <script src="app.js"></script>
 </body>
 </html>
