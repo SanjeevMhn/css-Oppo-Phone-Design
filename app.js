@@ -143,14 +143,15 @@ const getWeather = (cityId) =>{
         })
         .then(data=>{
             console.log(data);
+            displayWeather(data);
             //object destructering i guess??
-            const { main } = data.main;
-            let celcious = `${Math.round(main.temp)}<sup>°</sup>C`;
-            console.log(celcious);
-            let desc = `${weather[0]["description"]}`;
-            let temp = `${desc} ${celcious}`;
-            weatherTemp.innerText(temp);
-            weatherTemp.textContent(temp);
+            // const { main,weather } = data;
+            // let celcious = `${Math.round(main.temp)}<sup>°</sup>C`;
+            // //console.log(celcious);
+            // let desc = `${weather[0]["description"]}`;
+            // let temp = `${celcious}`;
+            // weatherTemp.innerHTML(temp);
+            // weatherTemp.textContent(temp);
         })
         .catch(function(){
             console.log("Help")
@@ -158,10 +159,13 @@ const getWeather = (cityId) =>{
 }
 getWeather(cityId);
 
-// function displayWeather(data) {
-//     let celcius = Math.round(data.main.temp);
-//     let weatherToday = data.weather[0].description + ' ' + celcius + '<sup>°</sup>C';
-//     weatherTemp.innerText = weatherToday;
-//     weatherTemp.textContent = weatherToday;
-
-// 
+function displayWeather(data) {
+    let celcius = Math.round(parseFloat(data.main.temp)-273.15);
+        
+    let weatherToday = celcius + '<sup>°</sup>C';
+    let desc = capitalizeFirstLetter(data.weather[0].description);
+    weatherTemp.innerHTML = `${desc} ${weatherToday}`;
+}
+function capitalizeFirstLetter(string){
+    return string.charAt(0).toUpperCase()+string.slice(1);
+}

@@ -260,11 +260,11 @@
                 font-size: 0.9rem;
             }
             .time-date-info .weather-temp{
-                height: 10%;
-                width: 50%;
+                height: 25%;
+                width: 100%;
                 display: flex;
-                align-items: center;
-                font-size: 0.85rem;
+                align-items: flex-start;
+                font-size: 0.9rem;
             }
         .mid-wrapper .arrow-up-unlock{
             height: 7%;
