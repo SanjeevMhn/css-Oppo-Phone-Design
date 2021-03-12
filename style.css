@@ -248,7 +248,7 @@
                 height: 65%;
                 width: 50%;
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
                 font-size: 3.85rem;
             }
