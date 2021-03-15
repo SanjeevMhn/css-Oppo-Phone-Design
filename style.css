@@ -147,7 +147,7 @@
                     width: 0.145rem;
                     background-color: #fff;
                     border-radius: 3px;
-                    margin-top: 0.5rem;
+                    margin-top: 0.49rem;
                 }
                 .signal-strength span:not(:last-child){
                     margin-right: 0.15rem;
@@ -159,10 +159,10 @@
                     height:30%; 
                 }
                 .signal-strength span:nth-child(3){
-                    height: 60%; 
+                    height: 40%; 
                 }
                 .signal-strength span:last-child{
-                    height:80%; 
+                    height:60%; 
                 }
             .network-info .signal-name{
                 height: 100%;
@@ -482,8 +482,9 @@
     .wrapper-homepage-view{
         height: 80%;
         width: 95%;
-        top: 3.5rem;
-        right: -18.5rem;
+        /* top: 3.5rem; */
+        top: 34.8rem;
+        /* right: -18.5rem; */
         /* right: 0.5rem; */
         position: absolute;
         color: #fff;
@@ -491,7 +492,7 @@
         justify-content: center;
         transition: all 700ms ease-in-out;
         font-family: 'Poppins', sans-serif;
-        z-index: 2;
+        z-index: 1;
     }
     .wrapper-homepage-view .const-img{
         height: 100%;
@@ -510,10 +511,10 @@
     }
     .wrapper-homepage-view .outer-grid-one{
         height: 55%;
-        width: 75%;
+        width: 80%;
         /* background-color: pink; */
         position: relative;
-        top: 3rem;
+        top: 2rem;
         display: flex;
     }
         .outer-grid-one .row-one{
@@ -524,44 +525,51 @@
         }
             .row-one .col-one,
             .row-one .col-two,
-            .row-one .col-three{
-                height: 100%;
-                width: 30%;
+            .row-one .col-three,
+            .row-one .col-four{
+                height: 2.5rem;
+                width: 3.5rem;
                 background-color: rgb(48, 76, 231);
-                border-radius: 18.5px;
+                border-radius: 15px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
             }
             .row-one .col-one,
-            .row-one .col-two{
+            .row-one .col-two,
+            .row-one .col-three{
                 margin-right: 1.25rem;
             }
-                .col-one .app-icon-instagram,
+                .col-one .app-icon-music,
                 .col-two .app-icon-facebook,
-                .col-three .app-icon-youtube{
-                    font-size: 1.75rem;
+                .col-three .app-icon-youtube,
+                .col-four .app-icon-instagram{
+                    font-size: 1.35rem;
                     display: flex;
                     justify-content: center;
                     position: relative;
                 }
-                .col-one .app-icon-instagram::after,
+                .col-one .app-icon-music::after,
                 .col-two .app-icon-facebook::after,
-                .col-three .app-icon-youtube::after{
+                .col-three .app-icon-youtube::after,
+                .col-four .app-icon-instagram::after{
                     position: absolute;
                     font-size: 0.65rem;
                     bottom: -1.75rem;
                     font-weight: 600;
                 }   
-                .col-one .app-icon-instagram::after{
-                    content: "Instagram";
+                .col-one .app-icon-music::after{
+                    content: "Music";
                 }
                 .col-two .app-icon-facebook::after{
                     content: "Messenger";
                 }
                 .col-three .app-icon-youtube::after{
                     content: "Youtube";
+                }
+                .col-four .app-icon-instagram::after{
+                    content: "Instagram";
                 }
 .container-phone .options{
     height: 10%;
