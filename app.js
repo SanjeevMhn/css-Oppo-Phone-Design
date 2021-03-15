@@ -7,7 +7,7 @@ const backImg = document.querySelector('.background-img');
 const bigTime = document.querySelector('.big-time');
 const dayAndDate = document.querySelector('.date-day');
 const weatherTemp = document.querySelector('.weather-temp');
-const cityId = 1283240;
+const cityId = 1283154;
 
 arrow.addEventListener('click',function(){
     main.style.top = -32 + 'rem';
@@ -144,14 +144,6 @@ const getWeather = (cityId) =>{
         .then(data=>{
             console.log(data);
             displayWeather(data);
-            //object destructering i guess??
-            // const { main,weather } = data;
-            // let celcious = `${Math.round(main.temp)}<sup>°</sup>C`;
-            // //console.log(celcious);
-            // let desc = `${weather[0]["description"]}`;
-            // let temp = `${celcious}`;
-            // weatherTemp.innerHTML(temp);
-            // weatherTemp.textContent(temp);
         })
         .catch(function(){
             console.log("Help")
