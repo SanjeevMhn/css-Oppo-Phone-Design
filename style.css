@@ -540,6 +540,7 @@
             .row-one .col-two,
             .row-one .col-three{
                 margin-right: 1.25rem;
+
             }
                 .col-one .app-icon-music,
                 .col-two .app-icon-facebook,
@@ -571,6 +572,69 @@
                 .col-four .app-icon-instagram::after{
                     content: "Instagram";
                 }
+                
+                .col-one .music-display{
+                    height: 27.85rem;
+                    width: 18.25rem;
+                    left: -2.45rem;
+                    top: -3.15rem;
+                    background-color: red;
+                    position: absolute;
+                    display: none;
+                    flex-direction: column;                    
+                    z-index: 20;
+                    border: 1px solid #000;
+                    overflow: hidden;
+                }
+                    .music-display .music-header{
+                        height: 25%;
+                        width: 100%;
+                        margin-top: 1.5rem;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .music-display .music-results{
+                        height: 75%;
+                        width: 100%;
+                        background-color: turquoise;
+                    }
+                        .music-header .header-text{
+                            height: 30%;
+                            width: 100%;
+                            text-align: center;
+                            vertical-align: center;
+                        }
+                        .music-header .search-music{
+                            height: 45%;
+                            width: 100%;
+                        }
+                            .search-music .search-bar{
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                            }
+                                .search-bar input[type="search"]{
+                                    width: 80%;
+                                    height: 100%;
+                                    padding-left: 1.2rem;
+                                    outline: none;
+                                    border: none;
+                                }
+                                .search-bar button{
+                                    width: 20%;
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    border: none;
+                                    outline: none;
+                                    background-color: yellowgreen;
+                                    color: #fff;
+                                    cursor: pointer;
+                                }
+                    
 .container-phone .options{
     height: 10%;
     width: 100%;

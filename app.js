@@ -9,7 +9,12 @@ const dayAndDate = document.querySelector('.date-day');
 const weatherTemp = document.querySelector('.weather-temp');
 const numInput = document.querySelectorAll('.input-num');
 const homePage = document.querySelector('.wrapper-homepage-view');
+const musicAppIcon = document.querySelector('.app-icon-music');
+const musicApp = document.querySelector('.music-display');
+const homeButton = document.querySelector('.home');
+const process = [musicApp];
 const cityId = 1283154;
+
 
 arrow.addEventListener('click',function(){
     main.style.top = -32 + 'rem';
@@ -33,6 +38,18 @@ numInput.forEach((num)=>{
         main2.style.visibility = "hidden";
     })
 });
+
+musicAppIcon.addEventListener('click',()=>{
+    musicApp.style.display = "flex";
+});
+
+homeButton.addEventListener('click', ()=>{
+    process.forEach((pro)=>{
+        if((pro.style.display) == "flex"){
+            pro.style.display = "none";
+        }
+    })
+})
 const showTime = () => {
     let date = new Date();
     let h = date.getHours();
@@ -70,9 +87,11 @@ const showDayDate = () => {
     let monthDate = date.getDate();
     let months = ["January","Feburary","March","April","May","June","July","August","September","October","November","December"];
     let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+   
     let monthName = months[month];
     let dayName = days[day];
     let today = dayName+", "+monthName+" "+monthDate;
+   
     dayAndDate.innerText = today;
     dayAndDate.textContent = today;
 }
@@ -89,7 +108,7 @@ const getWeather = (cityId) =>{
         .then(data=>{
     //        console.log(data);
             displayWeather(data);
-        })
+        })  
         .catch(function(){
             console.log("Help")
         });
@@ -105,4 +124,8 @@ function displayWeather(data) {
 }
 function capitalizeFirstLetter(string){
     return string.charAt(0).toUpperCase()+string.slice(1);
+}
+
+const getMusic = () => {
+    let spotiyKey = 'c789099113d14605991b729302ace82b';
 }
