@@ -46,13 +46,23 @@ musicAppIcon.addEventListener('click',()=>{
 });
 
 jokesAppIcon.addEventListener('click',()=>{
+    jokesApp.style.height = 27.85 +'rem';
+    jokesApp.style.width = 18.25 + 'rem';
+    jokesApp.style.left = -2.5 + 'rem';
+    jokesApp.style.top = -3.15 + 'rem';
     jokesApp.style.display = "flex";
+
 });
 
 homeButton.addEventListener('click', ()=>{
     process.forEach((pro)=>{
         if((pro.style.display) == "flex"){
+            jokesApp.style.height = 0 +'rem';
+            jokesApp.style.width = 0 + 'rem';
+            jokesApp.style.left = 0 + 'rem';
+            jokesApp.style.top = 0 + 'rem'
             pro.style.display = "none";
+            
         }
     })
 })
