@@ -11,8 +11,10 @@ const numInput = document.querySelectorAll('.input-num');
 const homePage = document.querySelector('.wrapper-homepage-view');
 const musicAppIcon = document.querySelector('.app-icon-music');
 const musicApp = document.querySelector('.music-display');
+const jokesAppIcon = document.querySelector('.app-icon-jokes');
+const jokesApp = document.querySelector('.jokes-display');
 const homeButton = document.querySelector('.home');
-const process = [musicApp];
+const process = [musicApp,jokesApp];
 const cityId = 1283154;
 
 
@@ -41,6 +43,10 @@ numInput.forEach((num)=>{
 
 musicAppIcon.addEventListener('click',()=>{
     musicApp.style.display = "flex";
+});
+
+jokesAppIcon.addEventListener('click',()=>{
+    jokesApp.style.display = "flex";
 });
 
 homeButton.addEventListener('click', ()=>{
@@ -126,6 +132,32 @@ function capitalizeFirstLetter(string){
     return string.charAt(0).toUpperCase()+string.slice(1);
 }
 
-const getMusic = () => {
-    let spotiyKey = 'c789099113d14605991b729302ace82b';
+const getJokes = () => {
+    let url = 'https://official-joke-api.appspot.com/jokes/programming/ten';
+    fetch(url)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        data.forEach(joke => {
+            const {setup, punchline} = joke;
+            const display = document.querySelector('.jokes-result');
+
+            let setu = document.createElement('DIV');
+            setu.classList.add('jokes-setup');
+            setu.innerText = setup;
+
+            let punch = document.createElement('DIV');
+            punch.classList.add('jokes-punchline');
+            punch.innerText = punchline;
+
+            let bundleJoke = document.createElement('DIV');
+            bundleJoke.classList.add('jokes-info');
+            bundleJoke.append(setu,punch);
+
+            display.appendChild(bundleJoke);
+        })
+    })
 }
+getJokes();

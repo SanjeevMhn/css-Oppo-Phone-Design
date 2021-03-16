@@ -542,8 +542,8 @@
                 margin-right: 1.25rem;
 
             }
-                .col-one .app-icon-music,
-                .col-two .app-icon-facebook,
+                .col-one .app-icon-jokes,
+                .col-two .app-icon-music,
                 .col-three .app-icon-youtube,
                 .col-four .app-icon-instagram{
                     font-size: 1.35rem;
@@ -551,8 +551,8 @@
                     justify-content: center;
                     position: relative;
                 }
-                .col-one .app-icon-music::after,
-                .col-two .app-icon-facebook::after,
+                .col-one .app-icon-jokes::after,
+                .col-two .app-icon-music::after,
                 .col-three .app-icon-youtube::after,
                 .col-four .app-icon-instagram::after{
                     position: absolute;
@@ -560,11 +560,11 @@
                     bottom: -1.75rem;
                     font-weight: 600;
                 }   
-                .col-one .app-icon-music::after{
-                    content: "Music";
+                .col-one .app-icon-jokes::after{
+                    content: "Jokes";
                 }
-                .col-two .app-icon-facebook::after{
-                    content: "Messenger";
+                .col-two .app-icon-music::after{
+                    content: "Music";
                 }
                 .col-three .app-icon-youtube::after{
                     content: "Youtube";
@@ -572,11 +572,62 @@
                 .col-four .app-icon-instagram::after{
                     content: "Instagram";
                 }
-                
-                .col-one .music-display{
+                .col-one .jokes-display{
                     height: 27.85rem;
                     width: 18.25rem;
-                    left: -2.45rem;
+                    left: -2.5rem;
+                    top: -3.15rem;
+                    background-color: red;
+                    position: absolute;
+                    display: none;
+                    flex-direction: column;                    
+                    z-index: 20;
+                    border: 1px solid #000;
+                    overflow: hidden;
+                }
+                    .jokes-display .header-text{
+                        height: 8%;
+                        width: 100%;
+                        background-color: pink;
+                        margin-top: 2.5rem;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .jokes-display .jokes-result{
+                        height: 100%;
+                        width: 100%;
+                        position: relative;
+                        display: grid;
+                        grid-template-columns: 80%;
+                        grid-template-rows: repeat(10, 93.5%);
+                        grid-row-gap: 1.5rem;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: turquoise;
+                    }                
+                        .jokes-result .jokes-info{
+                            height: 100%;
+                            width: 100%;
+                            background-color: blue;
+                            display: flex;
+                            flex-direction: column;
+                            position: relative;
+                        }
+                        .jokes-info .jokes-setup{
+                            width: 100%;
+                            height: 25%;
+                            font-size: 1.2rem;
+                            background-color: green;
+                            display: flex;
+                            justify-content: center;
+                            text-align: center;
+                        }
+                .col-two .music-display{
+                    height: 27.85rem;
+                    width: 18.25rem;
+                    left: -6.5rem;
                     top: -3.15rem;
                     background-color: red;
                     position: absolute;
