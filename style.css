@@ -545,7 +545,7 @@
             }
                 .col-one .app-icon-jokes,
                 .col-two .app-icon-music,
-                .col-three .app-icon-youtube,
+                .col-three .app-icon-football,
                 .col-four .app-icon-instagram{
                     font-size: 1.35rem;
                     display: flex;
@@ -554,7 +554,7 @@
                 }
                 .col-one .app-icon-jokes::after,
                 .col-two .app-icon-music::after,
-                .col-three .app-icon-youtube::after,
+                .col-three .app-icon-football::after,
                 .col-four .app-icon-instagram::after{
                     position: absolute;
                     font-size: 0.65rem;
@@ -567,17 +567,17 @@
                 .col-two .app-icon-music::after{
                     content: "Music";
                 }
-                .col-three .app-icon-youtube::after{
-                    content: "Youtube";
+                .col-three .app-icon-football::after{
+                    content: "Football";
                 }
                 .col-four .app-icon-instagram::after{
                     content: "Instagram";
                 }
                 .col-one .jokes-display{
-                    height: 2.25rem;
-                    width: 2.25rem;
-                    left: 0rem;
-                    top: 0rem;
+                    height: 27.85rem;
+                    width: 18.25rem;
+                    left: -2.5rem;
+                    top: -3.15rem;
                     background-color: rgb(2, 24, 83);
                     position: absolute;
                     display: none;
