@@ -173,7 +173,7 @@ const getFootball = () =>{
     .then(data => {
         console.log(data);
         data.forEach(da => {
-            const {title, embed}
+            const {title, embed} = da;
         })
     })
     .catch(err =>{
